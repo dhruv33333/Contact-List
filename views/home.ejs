@@ -12,17 +12,18 @@
 
 <body>
     <div id="headers">
-    <h1 id="page-heading"><i class="fas fa-address-book"></i> Contact List</h1>
+        <h1 id="page-heading"><i class="fas fa-address-book"></i> Contact List</h1>
 
-    <div id="search">
-        <form action="/search-contact" method="POST">
-            <input id="name-area" type="text" name="name" placeholder="Enter name">
-            <button id="search-btn" type="submit"><i class="fas fa-search"></i></button>
-
-        </form>
+        <!-- Search Area -->
+        <div id="search">
+            <form action="/search-contact" method="POST">
+                <input id="name-area" type="text" name="name" placeholder="Enter name">
+                <button id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
     </div>
-</div>
 
+    <!-- Contact List -->
     <div>
         <ul type="none">
             <% for(let i of contact_list) {%>
@@ -51,21 +52,19 @@
                                 <i class="far fa-edit"></i>
                             </a>
                         </div>
-
                     </div>
                 </li>
                 <% } %>
         </ul>
     </div>
 
+    <!-- Add Contact Button -->
     <div id="form">
         <a href="./addContact">
             <button id="add-btn" type="submit">Add Contact</button>
         </a>
     </div>
-
-
-    <script type="text/javascript" src="/js/home.js"></script>
+    
 </body>
 
 </html>

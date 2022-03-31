@@ -1,6 +1,8 @@
 //creating express server
 const express = require('express');
 const path = require('path');
+
+//setting port number
 const port = 8000;
 const alert = require('alert');
 
@@ -10,9 +12,13 @@ const Contact = require('./models/contact');
 
 const app = express();
 
+//setting up view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.urlencoded());
+
+//setting up assets
 app.use(express.static('assets'));
 
 //home page controller
@@ -52,7 +58,7 @@ app.get('/updateContact', function(req, res){
 
 //creating a contact
 app.post('/create-contact', function(req, res){
-
+    
     let phone = req.body.phone;
     let email = req.body.email;
     Contact.find({phone}, function(err, arr){
